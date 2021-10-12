@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="728.0" prefWidth="769.0">
+         <children>
+            <Button fx:id="sortPriceButton" layoutX="458.0" layoutY="229.0" mnemonicParsing="false" onAction="#funButtonPressed" prefHeight="36.0" prefWidth="292.0" text="Press For Fun" />
+            <Button fx:id="compareButton" layoutX="458.0" layoutY="284.0" mnemonicParsing="false" onAction="#compareButtonPressed" prefHeight="36.0" prefWidth="292.0" text="Compare" />
+            <TableView fx:id="compareTable" layoutX="17.0" layoutY="482.0" onSort="#compareButtonPressed" prefHeight="218.0" prefWidth="742.0">
+               <columns>
+                  <TableColumn fx:id="computerBrand" editable="false" prefWidth="65.0" text="Brand" />
+                  <TableColumn fx:id="computerModel" editable="false" minWidth="0.0" prefWidth="88.0" text="Model" />
+                  <TableColumn fx:id="computerScreenSize" editable="false" minWidth="0.0" prefWidth="81.0" text="Screen Size" />
+                  <TableColumn fx:id="screenResolution" prefWidth="97.0" text="Resolution" />
+                  <TableColumn fx:id="processor" prefWidth="69.0" text="Processor" />
+                  <TableColumn fx:id="memory" prefWidth="69.0" text="Memory" />
+                  <TableColumn fx:id="storageCapacity" prefWidth="72.0" text="Storage" />
+                  <TableColumn fx:id="computerPrice" prefWidth="61.0" text="Price" />
+               </columns>
+            </TableView>
+            <Label layoutX="83.0" layoutY="459.0" prefHeight="17.0" prefWidth="302.0" text="Comparision Based on Basic Information" />
+            <Button fx:id="getProductsButton" layoutX="458.0" layoutY="83.0" mnemonicParsing="false" onAction="#getProductsButtonPressed" prefHeight="36.0" prefWidth="292.0" text="Get Products" />
+            <TabPane layoutX="19.0" layoutY="22.0" prefHeight="193.0" prefWidth="414.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="phoneTab" text="Phone">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="380.0">
+                           <children>
+                              <ComboBox fx:id="phoneModelComboBox" layoutY="36.0" prefHeight="36.0" prefWidth="414.0" promptText="Model" />
+                              <ComboBox fx:id="phoneBrandComboBox" layoutY="82.0" prefHeight="36.0" prefWidth="414.0" promptText="Brand" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="computerTab" text="Computer">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="computerModelComboBox" layoutY="37.0" prefHeight="36.0" prefWidth="414.0" promptText="Model" />
+                              <ComboBox fx:id="computerBrandComboBox" layoutY="82.0" prefHeight="36.0" prefWidth="414.0" promptText="Brand" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <TableView fx:id="productListView" layoutX="23.0" layoutY="229.0" prefHeight="200.0" prefWidth="414.0">
+               <columns>
+                  <TableColumn fx:id="productColumn" editable="false" prefWidth="128.0" text="Product" />
+                  <TableColumn fx:id="featureColumn" editable="false" prefWidth="189.0" text="Feature" />
+                  <TableColumn fx:id="priceColumn" editable="false" prefWidth="95.0" text="Price" />
+               </columns></TableView>
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+         </padding>
+      </Pane>
+   </children>
+</GridPane>
