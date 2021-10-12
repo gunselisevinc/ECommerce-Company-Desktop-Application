@@ -9,7 +9,7 @@ The project has two parts:
 ### Web Service: 
 Develop a web service for an e-commerce company that sells computers and phones. This company keep tracks of the brand, model, screen size, screen resolution, processor, memory, storage capacity and price for each computer, and also the brand, model, screen size, internal memory and price for each phone. For each product, there could be a list of additional features, including all-day battery life (between 10 hours and 16 hours), touchscreen, face recognition, fingerprint reader, extra-long battery life (16 hours or more). Besides, for each product, there is a list of anonymous comments with ratings (between 1 and 5), such as "★★★★ Nice design!". The web service is designed to provide products along with all associated information based on the search criteria. The search criteria can be created based on the information available in the system. The search criteria should be created for either computers or phones, not both. Therefore, the web service can return a list of computers or the list of phones at the same time, not both of them.
 
-## Desktop Application: 
+### Desktop Application: 
 Develop a GUI-based desktop application that allows to send a request to the web service and processes the information retrieved from there. When it receives a list of computers or a list of phones along with their associated information, it assigns them special labels as follows where appropriate:
 * If a computer memory is greater than 16 GB, then the application will consider it as a computer with large memory.
 * If the computer storage is greater than 1 TB, then the application will consider it as a computer with large storage.
@@ -18,3 +18,24 @@ Develop a GUI-based desktop application that allows to send a request to the web
 
 The application should list the brand and models of the products retrieved along with the special labels added by the application. The application should also
 allow to generate a comparison for up to 3 products. The comparison is done in two different views where one view compares the brand, model, screen size, screen resolution, processor, memory, storage capacity, price and extra features for computers, and the brand, model, screen size, internal memory, price and extra features for phones, whereas another view compares their average ratings and show the most recent 3 comments for each product.
+
+## Project Steps
+
+### Database Design
+Relational database for the web service  is designed using entity-relationship diagram (ERD).
+
+### Project Initialization
+Spring project is generated using Spring Initializer with the following dependencies:
+* Spring Web
+* Lombok
+* Spring Data JPA
+* MYSQL Driver
+
+### Database Creation
+Entities are defined as JPA based on the database design. Entities in JPA are used to represent data that can be persisted to the database. 
+
+### WebService Development
+Get and Set methods are implemented to the webservice and Postman is used for testing these methods.
+
+### Desktop Application Development with GUI
+Desktop application is developed by using Java FX. This application sends a request to the web service and retrieves a response in the JSON format.
